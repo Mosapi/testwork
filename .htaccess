@@ -1,0 +1,13 @@
+RewriteBase /
+<IfModule mod_rewrite.c>
+#deny from all
+
+Options All -Indexes
+RewriteEngine on
+RewriteRule ^profile/([0-9]+)? /profile.php?u=$1 [QSA,L]
+RewriteRule ^company/([0-9]+)? /company.php?id=$1 [QSA,L]
+RewriteRule ^login login.php [NC]
+RewriteRule ^new new.php [NC]
+Options  -Indexes
+Allow from all
+</IfModule>
